@@ -90,3 +90,4 @@ else:
 <img width="1920" height="1080" alt="Screenshot 2026-10-27 161135" src="https://github.com/user-attachments/assets/45459b57-6868-4f50-8e44-7d0388539923" />
 
 ### RESULT:
+The system successfully integrated a precise backend calculation workflow with an LLM chat completion flow. By exploiting function calling, the model dynamically verified user inputs, structured calculation inputs correctly into an executable state, run the arithmetic local routines without hallucinations, and formatted the data into a fluent conversational output.
