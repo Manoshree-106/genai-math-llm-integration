@@ -4,11 +4,12 @@
 To design and implement a Python function for calculating the volume of a cylinder, integrate it with a chat completion system utilizing the function-calling feature of a large language model (LLM).
 
 ### PROBLEM STATEMENT:
+Large Language Models (LLMs) cannot inherently perform precise mathematical calculations like finding the volume of a geometry because they are language prediction systems rather than calculation engines. This project demonstrates how to overcome this limitation by using OpenAI's Function-Calling mechanism to securely delegate execution to a precise Python function that calculates a cone volume V=\frac{1}{3}\pi r^2h
 
 ### DESIGN STEPS:
-1.Define the Core Logic: Create a native Python function calculate_cylinder_volume(radius, height) that utilizes the math library to execute precise volume geometry operations.
+1.Define the Core Logic: Create a native Python function calculate_cone_volume(radius, height) that utilizes the math library to execute precise volume geometry operations.
 2.Construct JSON Schema: Build a structural metadata payload defining the function name, description, parameters (radius and height as float numbers), and required parameters.
-3.Initialize Chat State: Pass the tool specification schema along with the user's conversational prompt (e.g., "Find the volume of a cylinder with radius 5 and height 10") to the Chat Completions endpoint.
+3.Initialize Chat State: Pass the tool specification schema along with the user's conversational prompt (e.g., "Find the volume of a cone with radius 5 and height 10") to the Chat Completions endpoint.
 4.Intercept Tool Arguments: Extract the arguments payload generated programmatically by the model (args["radius"], args["height"]), parse them using json.loads(), and run the local calculation.
 5.Generate Final Context: Append the mathematical execution results back to the conversation thread using the function role, and call the model once more to create a friendly response.
 ### PROGRAM:
